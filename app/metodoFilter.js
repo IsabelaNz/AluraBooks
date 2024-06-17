@@ -1,16 +1,9 @@
 const botoes = document.querySelectorAll('.btn');
 botoes.forEach(btn => btn.addEventListener('click', filtrarLivros));
 
-function filtrarLivros(event) {
-    const elementoBtn = event.target;
-    const categoria = elementoBtn.value;
-    console.log('Botão clicado:', elementoBtn);
-    console.log('Categoria:', categoria);
-
-    let livrosFiltrados = categoria === 'disponivel' ? 
-        livros.filter(livro => livro.quantidade > 0) : 
-        livros.filter(livro => livro.categoria === categoria);
-
-    console.log('Livros filtrados:', livrosFiltrados);
-    exibirOsLivrosNaTela(livrosFiltrados);
+function filtrarLivros() {
+    const elementoBtn = document.getElementById(this.id)
+    const categoria = this.value;
+    let livrosFiltrados = livros.filter(livro => livro.categoria === categoria);
+    exibirOsLivrosNaTela(livrosFiltrados)
 }
